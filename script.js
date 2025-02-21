@@ -1,0 +1,1 @@
+let prompt = document.querySelector("#prompt");
