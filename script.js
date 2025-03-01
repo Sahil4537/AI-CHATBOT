@@ -5,7 +5,7 @@ let imagebtn=document.querySelector("#image")
 let image=document.querySelector("#image img")
 let imageinput=document.querySelector("#image input")
 
-const Api_Url="https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=Your-Api-Key"
+const Api_Url="https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyAiBrCj8fezXI8maO2h_gKhASEZrgzqX9k"
 
 let user={
     message:null,
@@ -59,11 +59,10 @@ function createChatBox(html,classes){
 
 function handlechatResponse(userMessage){
     user.message=userMessage
-    let html=`<img src="user.png" alt="" id="userImage" width="8%">
-<div class="user-chat-area">
-${user.message}
-${user.file.data?`<img src="data:${user.file.mime_type};base64,${user.file.data}" class="chooseimg" />` : ""}
-</div>`
+    let html=`<img src="user.jpg" alt="" id="userImage" width="9%">
+    <div class="user-chat-area">
+    ${userMessage}   
+    </div>`
 prompt.value=""
 let userChatBox=createChatBox(html,"user-chat-box")
 chatContainer.appendChild(userChatBox)
@@ -71,10 +70,10 @@ chatContainer.appendChild(userChatBox)
 chatContainer.scrollTo({top:chatContainer.scrollHeight,behavior:"smooth"})
 
 setTimeout(()=>{
-let html=`<img src="ai.png" alt="" id="aiImage" width="10%">
-    <div class="ai-chat-area">
-    <img src="loading.webp" alt="" class="load" width="50px">
-    </div>`
+let html=`<img src="ai.jpg" alt="" id="aiImage" width="8%">
+<div class="ai-chat-area">
+<img src="loading copy.webp" alt="" class="load" width="50px">
+</div>`
     let aiChatBox=createChatBox(html,"ai-chat-box")
     chatContainer.appendChild(aiChatBox)
     generateResponse(aiChatBox)
